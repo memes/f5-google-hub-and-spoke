@@ -1,0 +1,8 @@
+.direnv
+.envrc
+.tool-versions
+.bundle
+Gemfile.lock
+.terraform
+.terraform.lock.hcl
+.terragrunt-cache

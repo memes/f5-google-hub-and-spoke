@@ -1,0 +1,53 @@
+inputs = {
+  name = "emes-test-hs"
+  regions = [
+    "us-west1",
+    "us-central1",
+  ]
+  dns = {
+    project_id = "my-shared-vpc-host-project"
+  }
+  shared = {
+    project_id = "my-shared-vpc-host-project"
+  }
+  production = {
+    project_id         = "my-prod-vpc-service-project"
+    network_project_id = "my-prod-vpc-host-project"
+  }
+  non-production = {
+    project_id         = "my-non-prod-vpc-service-project"
+    network_project_id = "my-non-prod-vpc-host-project"
+  }
+  development = {
+    project_id         = "my-dev-vpc-service-project"
+    network_project_id = "my-dev-vpc-host-project"
+  }
+  # Key-value pairs to apply to Google Cloud resources that accept labels.
+  labels = {
+    owner = "owner"
+  }
+}
+
+# Defines the base configuration to store Terraform remote state in GCS buckets
+remote_state {
+  backend      = "gcs"
+  disable_init = true
+  generate = {
+    path      = "backend.tf"
+    if_exists = "overwrite_terragrunt"
+  }
+  config = {
+    bucket = "my-terraform-state-bucket"
+    prefix = "base/path/in/bucket/${path_relative_to_include()}"
+  }
+}
+
+# Defines the common generate pattern for Google provider.
+# NOTE: Google provider doesn't require explicit configuration so the default is an empty configuration.
+generate "provider" {
+  path      = "provider.tf"
+  if_exists = "overwrite_terragrunt"
+  contents  = <<-EOC
+    provider "google" {}
+    EOC
+}
