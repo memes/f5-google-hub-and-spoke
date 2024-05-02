@@ -20,7 +20,7 @@ dependency "spoke" {
 }
 
 terraform {
-  source = "tfr:///terraform-google-modules/network/google//modules/network-peering?version=8.1.0"
+  source = "tfr://registry.terraform.io/terraform-google-modules/network/google//modules/network-peering?version=9.1.0"
 }
 
 inputs = {

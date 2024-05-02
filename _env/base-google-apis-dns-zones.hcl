@@ -12,7 +12,7 @@ dependency "vpc" {
 }
 
 terraform {
-  source = "tfr:///memes/restricted-apis-dns/google?version=1.3.0"
+  source = "tfr://registry.terraform.io/memes/restricted-apis-dns/google?version=1.3.0"
 }
 
 inputs = {

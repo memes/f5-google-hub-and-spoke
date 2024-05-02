@@ -1,5 +1,5 @@
 terraform {
-  source = "tfr:///memes/multi-region-private-network/google?version=2.1.0"
+  source = "tfr://registry.terraform.io/memes/multi-region-private-network/google?version=2.1.0"
 }
 
 inputs = {
