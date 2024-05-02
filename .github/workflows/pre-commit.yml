@@ -7,9 +7,9 @@ name: pre-commit
 # yamllint disable-line rule:truthy
 on:
   pull_request:
-  push:
-    branches-ignore:
-      - main
+  # push:
+  #   branches-ignore:
+  #     - main
 permissions:
   contents: read
   pull-requests: read
@@ -27,7 +27,7 @@ jobs:
           sudo chmod 0755 /usr/local/bin/talisman
       - name: Install terraform-docs
         run: |
-          sudo sh -c 'curl -sL https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.17.0-linux-amd64.tar.gz | tar xzf - -C /usr/local/bin'
+          sudo sh -c 'curl -sL https://github.com/terraform-docs/terraform-docs/releases/download/v0.17.0/terraform-docs-v0.17.0-linux-amd64.tar.gz | tar xzf - -C /usr/local/bin'
           sudo chmod 0755 /usr/local/bin/terraform-docs
       - uses: actions/setup-python@v5
         with:
