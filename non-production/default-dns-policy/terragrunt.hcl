@@ -4,7 +4,7 @@ include "root" {
 }
 
 include "env" {
-  path = "${get_repo_root()}/_env/default-dns-policy.hcl"
+  path = "${get_repo_root()}/_components/default-dns-policy.hcl"
 }
 
 remote_state = include.root.remote_state
