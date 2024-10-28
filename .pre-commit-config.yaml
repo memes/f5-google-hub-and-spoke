@@ -5,18 +5,21 @@ repos:
     hooks:
       - id: yamllint
         files: \.(yml|yaml|talismanrc)$
-        types: [file, yaml]
+        types:
+          - file
+          - yaml
         exclude: (kitchen\.yml|\.github/ISSUE_TEMPLATE/config\.yml)$
         entry: yamllint --strict
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.89.1
+    rev: v1.96.1
     hooks:
       - id: terraform_fmt
       - id: terraform_docs
-        args: ['--args=--sort-by=required --hide=providers']
+        args:
+          - '--args=--sort-by=required --hide=providers'
       - id: terragrunt_fmt
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
@@ -28,7 +31,7 @@ repos:
           - main
       - id: trailing-whitespace
   - repo: https://github.com/rubocop/rubocop
-    rev: v1.63.4
+    rev: v1.67.0
     hooks:
       - id: rubocop
   - repo: https://github.com/thoughtworks/talisman
