@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-ruby '3.3.1'
+ruby '3.3.5'
 
 source 'https://rubygems.org/'
 group :dev do
-  gem 'rubocop', '~> 1.63', require: false
+  gem 'rubocop', '~> 1.67', require: false
 end
