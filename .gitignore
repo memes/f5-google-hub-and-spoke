@@ -6,3 +6,8 @@ Gemfile.lock
 .terraform
 .terraform.lock.hcl
 .terragrunt-cache
+
+# Ignore root config and generated files
+/terragrunt.hcl
+_backend.tf
+_providers.tf

@@ -19,7 +19,7 @@ dependency "vpc" {
 remote_state = include.root.remote_state
 
 terraform {
-  source = "${get_repo_root()}/modules/vpc-dns-policy/"
+  source = "${find_in_parent_folders("modules")}/vpc-dns-policy/"
 }
 
 inputs = {
