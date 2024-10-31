@@ -4,7 +4,7 @@ include "root" {
 }
 
 include "env" {
-  path = "${get_repo_root()}/_components/base-google-apis-dns-zones.hcl"
+  path = "${find_in_parent_folders("_components")}/base-google-apis-dns-zones.hcl"
 }
 
 remote_state = include.root.remote_state

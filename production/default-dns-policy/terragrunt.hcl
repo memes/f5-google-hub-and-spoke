@@ -4,7 +4,7 @@ include "root" {
 }
 
 include "env" {
-  path = "${get_repo_root()}/_components/default-dns-policy.hcl"
+  path = "${find_in_parent_folders("_components")}/default-dns-policy.hcl"
 }
 
 remote_state = include.root.remote_state
@@ -14,7 +14,7 @@ locals {
 }
 
 terraform {
-  source = "${get_repo_root()}/modules/vpc-dns-policy/"
+  source = "${find_in_parent_folders("modules")}/vpc-dns-policy/"
 }
 
 inputs = {

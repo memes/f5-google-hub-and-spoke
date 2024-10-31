@@ -31,9 +31,8 @@ inputs = {
 # Defines the base configuration to store Terraform remote state in GCS buckets
 remote_state {
   backend      = "gcs"
-  disable_init = true
   generate = {
-    path      = "backend.tf"
+    path      = "_backend.tf"
     if_exists = "overwrite_terragrunt"
   }
   config = {
@@ -45,7 +44,7 @@ remote_state {
 # Defines the common generate pattern for Google provider.
 # NOTE: Google provider doesn't require explicit configuration so the default is an empty configuration.
 generate "provider" {
-  path      = "provider.tf"
+  path      = "_providers.tf"
   if_exists = "overwrite_terragrunt"
   contents  = <<-EOC
     provider "google" {}

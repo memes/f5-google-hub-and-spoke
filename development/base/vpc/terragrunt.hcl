@@ -4,7 +4,7 @@ include "root" {
 }
 
 include "base" {
-  path = "${get_repo_root()}/_components/base-vpc.hcl"
+  path = "${find_in_parent_folders("_components")}/base-vpc.hcl"
 }
 
 remote_state = include.root.remote_state

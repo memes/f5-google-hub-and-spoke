@@ -4,7 +4,7 @@ include "root" {
 }
 
 include "env" {
-  path = "${get_repo_root()}/_components/restricted-vpc-peering.hcl"
+  path = "${find_in_parent_folders("_components")}/restricted-vpc-peering.hcl"
 }
 
 remote_state = include.root.remote_state
