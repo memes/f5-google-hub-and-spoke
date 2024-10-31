@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/memes/f5-google-hub-and-spoke/compare/v0.2.0...v0.3.0) (2024-10-31)
+
+
+### Features
+
+* Refactor for relocation support ([42110b7](https://github.com/memes/f5-google-hub-and-spoke/commit/42110b7f76fa231f40cefd56f2ba66d89410f4b4))
+
+
+### Bug Fixes
+
+* Rename includes to _components ([761c193](https://github.com/memes/f5-google-hub-and-spoke/commit/761c1939c39caabb9b66c6765e6a745668608515))
+
 ## [0.2.0](https://github.com/memes/f5-google-hub-and-spoke/compare/v0.1.0...v0.2.0) (2024-05-02)
 
 
